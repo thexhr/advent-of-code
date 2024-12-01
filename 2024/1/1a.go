@@ -10,19 +10,14 @@ import (
 	"strings"
 )
 
-func findOccurences(a int, b []int) (n int) {
+func buildOccurenceMap(b []int) map[int] int {
+	a := make(map[int]int)
 	for _, v := range b {
-		if v == a {
-			n++
-		}
-		// array is sorted
-		if v > a {
-			break
-		}
+		a[v] += 1
 	}
-	return n
-}
 
+	return a
+}
 func main() {
 	f, err := os.Open("input")
 	if err != nil {
@@ -49,12 +44,10 @@ func main() {
 	sort.Ints(left[:])
 	sort.Ints(right[:])
 
-	if len(left) != len(right) {
-		log.Fatal("Arrys have different length")
-	}
+	x := buildOccurenceMap(right)
 
 	for _, l := range left {
-		res += (l * findOccurences(l, right))
+		res += (l * x[l])
 	}
 
 	fmt.Println("res: ", res)
