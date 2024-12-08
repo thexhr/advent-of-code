@@ -66,6 +66,7 @@ func walk(matrix [][]rune, x int, y int, direction Direction) {
 	}
 }
 
+// Only distinct steps need to be count, so simply count Xes
 func countX(matrix [][]rune) (res int) {
 	for i := 0; i < matrixLen; i++ {
 		for j := 0; j < matrixLen; j++ {
@@ -82,6 +83,7 @@ var xmatrix [][]rune
 
 func main() {
 	var res int
+	// XXX cheating here
 	matrixLen = 130+2
 	f, err := os.Open("input")
 	if err != nil {
