@@ -1,6 +1,10 @@
+# Adevent of Code
+
 Code I wrote for the Advent of Code - https://adventofcode.com/
 
 Code is public domain, so use as you wish.
+
+## C
 
 *NOTE* You might find dragons in the code! This is ugly, insecure and usafe C code.  I just hacked the advent for code for fun, not to write clean and secure code!
 
@@ -18,3 +22,10 @@ $ cc -Wall -Wextra foo.c
 $ ./a.out
 ```
 
+## Go
+
+Several solutions are written in go.  To run
+
+```
+$ go run 1.go
+```
