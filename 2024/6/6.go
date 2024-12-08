@@ -36,7 +36,7 @@ func walk(matrix [][]rune, x int, y int, direction Direction) {
 		return
 	}
 
-	markX(xmatrix, x, y)
+	xmatrix[x][y] = 'X'
 
 	switch direction {
 		case Up:
@@ -64,10 +64,6 @@ func walk(matrix [][]rune, x int, y int, direction Direction) {
 				walk(matrix,x,y-1,direction)
 			}
 	}
-}
-
-func markX(matrix [][]rune, x, y int) {
-	matrix[x][y] = 'X'
 }
 
 func countX(matrix [][]rune) (res int) {
